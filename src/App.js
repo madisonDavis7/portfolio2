@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useEffect, useRef } from 'react';
+import LocomotiveScroll from 'locomotive-scroll';
+import Homepage from './components/home';
+import About from './components/about';
+import Portfolio from './components/portfolio';
+import "./styles.css";
 
-function App() {
+const App =() => {
+  const containerRef = useRef(null); //reference to the container (DOM) 
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: containerRef.current,
+      smooth: true,
+      lerp: .08, //smoothness
+    });
+
+    return () => {
+      scroll.destroy(); //destroys the scroll when the component is unmounted
+    };
+
+  }, []); //dependency array that tells react when to run effect
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+        <div data-scroll-container ref={containerRef}>
+          <Homepage />
+          <About />
+          <Portfolio />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
