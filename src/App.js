@@ -6,7 +6,7 @@ import About from './components/about';
 import Portfolio from './components/portfolio';
 import "./styles.css";
 
-const App =() => {
+const App = () => {
   const containerRef = useRef(null); //reference to the container (DOM) 
 
   useEffect(() => {
@@ -24,10 +24,10 @@ const App =() => {
 
   return (
     <div className="app">
-        <div data-scroll-container ref={containerRef}>
-          <Homepage />
-          <About />
-          <Portfolio />
+      <div data-scroll-container ref={containerRef}>
+        <Homepage />
+        <About />
+        <Portfolio />
       </div>
     </div>
   );
