@@ -3,6 +3,7 @@ body {
   scroll-behavior: smooth;
   background-size: cover;
   overflow-x: hidden;
+  background-color: rgb(29, 29, 37);
 }
 
 .section {
@@ -21,18 +22,6 @@ body {
   position: relative;
   z-index: 1;
   /* lower than background */
-}
-
-.home {
-  background-color: pink;
-}
-
-.about {
-  background-color: purple;
-}
-
-.portfolio {
-  background-color: lightblue;
 }
 
 /* styles for locomotive scroll */

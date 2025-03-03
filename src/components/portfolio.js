@@ -8,17 +8,20 @@ import '../cyberstyles.css';
 const Portfolio = () => {
 
     return (
-        <motion.section
-            className="section portfolio"
-            data-scroll-section
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }} //animation when leaving
-            transition={{ duration: 3 }}
-            viewport={{ once: true, amount: 0.5 }}
-        >
-            <h1>Portfolio</h1>
-        </motion.section>
+        <section className="section portfolio" data-scroll-section>
+            <motion.section
+                className="section portfolio"
+                data-scroll-section
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }} //animation when leaving
+                transition={{ duration: 3 }}
+                viewport={{ once: false, amount: 0.5 }}
+            >
+                <h1>Portfolio</h1>
+            </motion.section>
+        </section>
+
     );
 };
 
